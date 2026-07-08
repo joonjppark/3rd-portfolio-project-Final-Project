@@ -7,8 +7,35 @@
     color: #243e63;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+a {
+    display: inline;
+    text-decoration: none;
+}
+
 h1 {
     font-size: 48px;
+    color: #1a202c;
+    line-height: 1.25;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
 }
 
 section {
@@ -62,6 +89,15 @@ nav {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.row__narrow {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .nav__row {
@@ -146,6 +182,11 @@ header .row {
     width: calc(100% - 40%);
 }
 
+nav {
+    padding-top: 32px;
+    display: flex;
+}
+
 .nav__logo {
     display: flex;
     align-items: center;
@@ -166,6 +207,15 @@ header .row {
     width: 40px;
 }
 
+.nav__container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
 .nav__links {
     display: flex;
     align-items: center;
@@ -173,15 +223,13 @@ header .row {
 }
 
 .nav__link {
-    margin: 0 24px;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     padding-top: 4px;
     letter-spacing: 0.35px;
     border-bottom: 2px solid transparent;
     position: relative;
     transition: all 300ms;
-    text-decoration: none;
 }
 
 .nav__link:after {
@@ -194,6 +242,10 @@ header .row {
     background: #6415ff;
     transition: all 300ms ease;
     opacity: 0;
+}
+
+.nav__link:hover:after {
+    opacity: 1;
 }
 
 .nav__link:hover {
@@ -218,6 +270,17 @@ header .row {
     transition: all 300ms ease;
 }
 
+.nav__link--primary:after {
+    content: "";
+    width: 0;
+    height: 0;
+}
+
+.nav__link--primary:hover {
+    background-color: rgba(80, 17, 204);
+    color: white;
+}
+
 .menu {
     position: fixed;
     top: 0;
@@ -234,6 +297,17 @@ header .row {
     opacity: 0;
     transform: translateX(300%);
     transition: all 300ms ease;
+}
+
+.menu--open {
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+.menu--open .menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .menu_links {
@@ -254,6 +328,20 @@ header .row {
     border-bottom: 2px solid transparent;
 }
 
+.menu__link--primary {
+    color: #f7fafc;
+    padding: 12px 32px;
+    background: #6415ff;
+    border-radius: 500px;
+    border: none;
+}
+
+.btn__menu--close {
+    position: fixed;
+    top: 24px;
+    right: 18px;
+}
+
 a {
     display: inline;
     text-decoration: none;
@@ -264,6 +352,22 @@ button {
     border: none;
 }
 
+.btn {
+    background-color: #6415ff;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 500px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    transition: all 300ms ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(80, 17, 204);
+}
+
 .btn__menu {
     background-color: transparent;
     border: none;
@@ -271,8 +375,72 @@ button {
     transition: all 300ms ease;
 }
 
+.btn__menu--svg:hover {
+    filter: invert(26%) sepia(94%) saturate(747) brightness(94%) contrast(115%);
+}
+
 .btn__menu--close {
     position: fixed;
     top: 24px;
     right: 18px;
+}
+
+.section__tag {
+    font-size: 16px;
+    color: #6415ff;
+    letter-spacing: 1.6px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section__title {
+    font-size: 48px;
+    font-weight: 900;
+    color: rgb(36, 62, 99);
+    line-height: 1.5;
+    margin: 16px 0;
+    letter-spacing: 0.025em;
+}
+
+#features .section__title,
+#pricing .section__title {
+    text-align: center;
+}
+
+.section__para {
+    font-size: 18px;
+    font-weight: 500;
+    color: #7c8ba1;
+    line-height: 1.625;
+}
+
+.feature__row {
+    display: flex;
+    align-items: flex-start;
+    padding: 32px 24px;
+}
+
+.feature__img {
+    width: 24px;
+    height: 24px;
+}
+
+.feature__img--wrapper {
+    display: flex;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 500px;
+}
+
+.feature__para {
+    margin-top: 16px;
+    font-size: 16px;
+    max-width: calc(634px / 3);
+    color: rgb(124, 139, 161);
+    line-height: 2;
+    font-weight: 500;
+}
+
+.login {
+    margin-left: 48px;
 }
